@@ -1,0 +1,29 @@
+{
+  "statusCode": 500,
+  "isOperational": false,
+  "request": "DELETE /api/v1/tasks/",
+  "message": "🔥Error🔥: taskId is not defined",
+  "date": "Tue, 08 Sep 2020 14:33:52 GMT",
+  "stack": "ReferenceError: taskId is not defined\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\taskCtrl.js:103:40\n    at E:\\Projects\\Proman\\Backend\\src\\utils\\catchAsync.js:3:5\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:131:14)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:131:14)\n    at Route.dispatch (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7"
+}
+
+{
+  "statusCode": 500,
+  "isOperational": false,
+  "request": "DELETE /api/v1/tasks",
+  "message": "🔥Error🔥: taskId is not defined",
+  "date": "Tue, 08 Sep 2020 14:34:33 GMT",
+  "stack": "ReferenceError: taskId is not defined\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\taskCtrl.js:103:40\n    at E:\\Projects\\Proman\\Backend\\src\\utils\\catchAsync.js:3:5\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:131:14)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:131:14)\n    at Route.dispatch (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7"
+}
+
+{
+  "success": false,
+  "statusCode": 404,
+  "isOperational": true,
+  "request": "POST /api/v1/tasks/create",
+  "domain": "Getting /api/v1/tasks/create",
+  "message": "🔥Error🔥: Page Not found",
+  "date": "Tue, 08 Sep 2020 14:37:13 GMT",
+  "stack": "Error: Page Not found\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\app.js:58:7\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at Function.handle (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)"
+}
+
