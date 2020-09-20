@@ -1,0 +1,66 @@
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "GET /api/v1/projects",
+  "domain": "Protection",
+  "message": "🔥Error🔥: The token is no longer exist",
+  "date": "Sun, 20 Sep 2020 15:16:00 GMT",
+  "stack": "Error: The token is no longer exist\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:112:4\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "GET /api/v1/projects/5f676ae570da9e19f043fc7c",
+  "domain": "Protection",
+  "message": "🔥Error🔥: The token is no longer exist",
+  "date": "Sun, 20 Sep 2020 15:16:00 GMT",
+  "stack": "Error: The token is no longer exist\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:112:4\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "POST /api/v1/users/login",
+  "domain": "Login",
+  "message": "🔥Error🔥: Invalid data",
+  "date": "Sun, 20 Sep 2020 15:16:41 GMT",
+  "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:66:15\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "POST /api/v1/users/login",
+  "domain": "Login",
+  "message": "🔥Error🔥: Invalid data",
+  "date": "Sun, 20 Sep 2020 15:16:47 GMT",
+  "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:66:15"
+}
+
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "POST /api/v1/users/login",
+  "domain": "Login",
+  "message": "🔥Error🔥: Invalid data",
+  "date": "Sun, 20 Sep 2020 15:16:49 GMT",
+  "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:66:15"
+}
+
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "POST /api/v1/users/login",
+  "domain": "Login",
+  "message": "🔥Error🔥: Invalid data",
+  "date": "Sun, 20 Sep 2020 15:17:23 GMT",
+  "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:66:15"
+}
+

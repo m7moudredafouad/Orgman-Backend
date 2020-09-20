@@ -1,0 +1,44 @@
+{
+  "success": false,
+  "statusCode": 404,
+  "isOperational": true,
+  "request": "POST /api/v1/tasks",
+  "domain": "Getting /api/v1/tasks",
+  "message": "🔥Error🔥: Page Not found",
+  "date": "Wed, 16 Sep 2020 16:51:05 GMT",
+  "stack": "Error: Page Not found\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\app.js:67:7\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at Function.handle (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)"
+}
+
+{
+  "success": false,
+  "statusCode": 500,
+  "isOperational": true,
+  "request": "POST /api/v1/tasks/5f624260025fe71d9c1114a4",
+  "domain": "Creating SubTasks",
+  "message": "🔥Error🔥: Creating SubTasks Error",
+  "date": "Wed, 16 Sep 2020 16:51:16 GMT",
+  "stack": "Error: Creating SubTasks Error\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at createNewTasks (E:\\Projects\\Proman\\Backend\\src\\controllers\\taskCtrl.js:46:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+
+{
+  "success": false,
+  "statusCode": 500,
+  "isOperational": true,
+  "request": "POST /api/v1/tasks/5f624260025fe71d9c1114a4",
+  "domain": "Creating SubTasks",
+  "message": "🔥Error🔥: Creating SubTasks Error",
+  "date": "Wed, 16 Sep 2020 16:54:54 GMT",
+  "stack": "Error: Creating SubTasks Error\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at createNewTasks (E:\\Projects\\Proman\\Backend\\src\\controllers\\taskCtrl.js:46:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+
+{
+  "success": false,
+  "statusCode": 500,
+  "isOperational": true,
+  "request": "POST /api/v1/tasks/5f624260025fe71d9c1114a4",
+  "domain": "Creating SubTasks",
+  "message": "🔥Error🔥: Creating SubTasks Error",
+  "date": "Wed, 16 Sep 2020 16:56:10 GMT",
+  "stack": "Error: Creating SubTasks Error\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at createNewTasks (E:\\Projects\\Proman\\Backend\\src\\controllers\\taskCtrl.js:46:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+}
+

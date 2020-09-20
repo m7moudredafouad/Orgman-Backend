@@ -1,0 +1,11 @@
+{
+  "success": false,
+  "statusCode": 404,
+  "isOperational": true,
+  "request": "GET /5f652e46a2d9a63878780b6c",
+  "domain": "Getting /5f652e46a2d9a63878780b6c",
+  "message": "🔥Error🔥: Page Not found",
+  "date": "Fri, 18 Sep 2020 22:38:39 GMT",
+  "stack": "Error: Page Not found\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\app.js:73:7\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at cookieParser (E:\\Projects\\Proman\\Backend\\node_modules\\cookie-parser\\index.js:71:5)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at jsonParser (E:\\Projects\\Proman\\Backend\\node_modules\\body-parser\\lib\\types\\json.js:110:7)\n    at Layer.handle [as handle_request] (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Projects\\Proman\\Backend\\node_modules\\express\\lib\\router\\index.js:317:13)"
+}
+

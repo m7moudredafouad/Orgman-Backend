@@ -1,12 +1,16 @@
-const express = require('express');
-const router = express.Router();
-const taskCtrl = require('../controllers/taskCtrl');
+// const express = require('express');
+// const router = express.Router();
+// const taskCtrl = require('../controllers/taskCtrl');
+// const authCtrl = require('../controllers/authCtrl');
 
-router.get('/:taskId', taskCtrl.findTask);
-router
-	.route('/')
-	.post(taskCtrl.create)
-	.patch(taskCtrl.update)
-	.delete(taskCtrl.delete);
+// router.use(authCtrl.protect);
 
-module.exports = router;
+// router.get('/:taskId', taskCtrl.isMyProject, taskCtrl.findTask);
+
+// router
+// 	.route('/')
+// 	.post(taskCtrl.isMyProject, taskCtrl.create)
+// 	.delete(taskCtrl.isMyProject, taskCtrl.delete)
+// 	.patch(taskCtrl.isMyProject, taskCtrl.update);
+
+// module.exports = router;

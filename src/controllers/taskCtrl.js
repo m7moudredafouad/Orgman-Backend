@@ -3,13 +3,26 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/AppError');
 const mongoose = require('mongoose');
 
+exports.isMyProject = (req, res, next) => {
+	const projectId = req.params.projectId;
+
+	if (!req.user.projects.includes(projectId)) {
+		return next(
+			new AppError('You dont own this project', 401, 'I Have The Project')
+		);
+	}
+
+	req.projectId = projectId;
+	next();
+};
+
 /**
  *
  * @param {Task Array} tasksArray
  * @param {Number} prevNode
  */
 // Create helpers
-const createNewTasks = async (tasksArray, prevNode) => {
+const createNewTasks = async (tasksArray, projectId, prevNode) => {
 	if (!tasksArray || tasksArray.length <= 0 || prevNode > 4) return;
 	let listOfTasksChilds = new Array();
 
@@ -23,11 +36,16 @@ const createNewTasks = async (tasksArray, prevNode) => {
 				done: !!task.done,
 				prevNodes: prevNode,
 				subTasks: [],
+				project: projectId,
 			}
 		);
 
 		if (task.subTasks && task.subTasks.length > 0) {
-			newTempTask.subTasks = await createNewTasks(task.subTasks, prevNode + 1);
+			newTempTask.subTasks = await createNewTasks(
+				task.subTasks,
+				projectId,
+				prevNode + 1
+			);
 		}
 
 		listOfTasksChilds.push(newTempTask);
@@ -39,24 +57,28 @@ const createNewTasks = async (tasksArray, prevNode) => {
 		newlyCreatedTasks.forEach((fullTask) => {
 			newlyCreatedIds.push(fullTask._id);
 		});
-		console.log(newlyCreatedIds);
 		return newlyCreatedIds;
 	} catch (err) {
 		throw new AppError('Creating SubTasks Error', 500, 'Creating SubTasks');
 	}
 };
 
-const findTasksAndInsertNewTasks = async (newTasks) => {
+const findTasksAndInsertNewTasks = async (newTasks, projectId) => {
 	const keys = Object.keys(newTasks);
 	let listOfNewIds = new Array();
 
 	for (const key of keys) {
-		let task = await Task.findById(key, { prevNodes: 1 });
+		let task = await Task.findOne(
+			{ _id: key, project: { $in: [projectId, null] } },
+			{ prevNodes: 1 }
+		);
 		if (!task) continue;
 
-		console.log(task);
-
-		listOfNewIds = await createNewTasks(newTasks[key], task.prevNodes + 1);
+		listOfNewIds = await createNewTasks(
+			newTasks[key],
+			projectId,
+			task.prevNodes + 1
+		);
 
 		await Task.findByIdAndUpdate(key, {
 			$push: { subTasks: { $each: listOfNewIds } },
@@ -65,8 +87,24 @@ const findTasksAndInsertNewTasks = async (newTasks) => {
 };
 
 // Create a task
-exports.create = catchAsync(async (req, res) => {
-	await findTasksAndInsertNewTasks(req.body.newTasks);
+exports.create = catchAsync(async (req, res, next) => {
+	const projectId = req.projectId;
+
+	if (!mongoose.Types.ObjectId.isValid(projectId)) {
+		return next(
+			new AppError('Non Valid Project id', 400, 'Find Project To Create Tasks')
+		);
+	}
+
+	const project = await Task.findOne({ _id: projectId, prevNodes: 0 });
+
+	if (!project) {
+		return next(
+			new AppError("Project doesn't exist", 404, 'Find Project To Create Tasks')
+		);
+	}
+
+	await findTasksAndInsertNewTasks(req.body.newTasks, projectId);
 	res.status(201).json({
 		success: true,
 	});
@@ -77,13 +115,20 @@ exports.findTask = catchAsync(async (req, res, next) => {
 	const taskId = req.params.taskId;
 
 	if (!mongoose.Types.ObjectId.isValid(taskId)) {
-		return next(new AppError('Task id is not valid', 400, 'Task find'));
+		return next(new AppError('Task id is not valid', 400, 'Task Finding'));
 	}
 
-	const task = await Task.findById(taskId).populate({
+	const task = await Task.findOne({
+		_id: taskId,
+		project: req.projectId,
+	}).populate({
 		path: 'subTasks',
 		select: 'title done',
 	});
+
+	if (!task) {
+		return next(new AppError('Task not found', 404, 'Task Finding'));
+	}
 
 	res.status(200).json({
 		success: true,
@@ -94,14 +139,23 @@ exports.findTask = catchAsync(async (req, res, next) => {
 // Task Deletion
 exports.delete = catchAsync(async (req, res, next) => {
 	const deleteThisIds = req.body.deleteThisIds;
+	const projectId = req.projectId;
 
 	if (!deleteThisIds) {
 		return next(new AppError('No tasks to delete'), 400, 'Delete Tasks');
 	}
 
+	if (!mongoose.Types.ObjectId.isValid(projectId)) {
+		return next(new AppError('Non Valid Project id', 400, 'Delete Tasks'));
+	}
+
 	for (const id of deleteThisIds) {
 		if (!mongoose.Types.ObjectId.isValid(id)) continue;
-		await Task.findOneAndDelete({ _id: id });
+		if (id === projectId) {
+			await Task.findOneAndDelete({ _id: id });
+		} else {
+			await Task.findOneAndDelete({ _id: id, project: projectId });
+		}
 	}
 
 	res.status(200).json({
@@ -131,13 +185,20 @@ const trimObjectsFromUnknownKeys = (object) => {
 
 exports.update = catchAsync(async (req, res) => {
 	const updateThisIds = req.body.updateThisIds;
+	const projectId = req.projectId;
 
 	const trimedObject = trimObjectsFromUnknownKeys(updateThisIds);
-	console.log(trimedObject);
 
 	Promise.all(
 		Object.keys(trimedObject).map(async (key) => {
-			return await Task.findByIdAndUpdate(key, trimedObject[key]);
+			if (key === projectId) {
+				return await Task.findByIdAndUpdate(key, trimedObject[key]);
+			} else {
+				return await Task.findOneAndUpdate(
+					{ _id: key, project: projectId },
+					trimedObject[key]
+				);
+			}
 		})
 	);
 
