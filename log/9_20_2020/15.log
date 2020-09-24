@@ -64,3 +64,20 @@
   "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:66:15"
 }
 
+{
+  "success": false,
+  "statusCode": 401,
+  "isOperational": true,
+  "request": "POST /api/v1/users/login",
+  "domain": "Login",
+  "message": "🔥Error🔥: Invalid data",
+  "date": "Sun, 20 Sep 2020 15:30:35 GMT",
+  "stack": "Error: Invalid data\n    at new AppError (E:\\Projects\\Proman\\Backend\\src\\utils\\AppError.js:10:15)\n    at E:\\Projects\\Proman\\Backend\\src\\controllers\\authCtrl.js:65:15"
+}
+
+Mongodb Connection Error
+MongoNetworkError: failed to connect to server [127.0.0.1:27017] on first connect [Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27) {
+  name: 'MongoNetworkError'
+}]
+

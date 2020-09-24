@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const path = require('path');
 const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
 
 // Import My dependancies
 const AppError = require('./src/utils/AppError');
@@ -41,6 +43,8 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(xss());
+app.use(mongoSanitize());
 
 // Import routes
 const projectRoute = require('./src/routes/projectRoute');
