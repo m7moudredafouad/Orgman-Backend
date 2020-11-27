@@ -1,6 +1,0 @@
-Mongodb Connection Error
-MongoNetworkError: failed to connect to server [127.0.0.1:27017] on first connect [Error: read ECONNRESET
-    at TCP.onStreamRead (internal/stream_base_commons.js:205:27) {
-  name: 'MongoNetworkError'
-}]
-
